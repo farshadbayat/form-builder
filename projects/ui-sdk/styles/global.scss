@@ -1,0 +1,10 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.15;
+    text-size-adjust: 100%;
+}
+
+
+[tabindex='-1']:focus {
+    outline: none !important;
+  }

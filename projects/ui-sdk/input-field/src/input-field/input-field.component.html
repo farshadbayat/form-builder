@@ -1,0 +1,23 @@
+<field-wrapper [option]="option" *ngIf="option" [class.input-field-active]="inputIsActive">
+    <span [ngSwitch]="option.valueType" class="input-field-value" [ngStyle]="option.valueStyle">
+        <span *ngSwitchCase="'color'">
+            <input type="color" name="title-field" value="#ff0000">
+        </span>
+    
+        <span *ngSwitchCase="'image'">
+            <img>
+        </span>
+        
+        <span *ngSwitchCase="'toggle'">
+    
+        </span>
+
+        <span *ngSwitchCase="'category'">
+    
+        </span>
+
+        <ng-container *ngSwitchDefault>
+            <input class="input-field-text" (focus)="input_onActive(true)" (blur)="input_onActive(false)" [class.ns-resize]="option.valueType == 'number-resize'" type="text" [value]="option.value">
+        </ng-container>
+    </span>
+</field-wrapper>
