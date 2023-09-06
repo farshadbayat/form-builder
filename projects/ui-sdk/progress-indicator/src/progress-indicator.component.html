@@ -1,0 +1,10 @@
+<ng-container *ngIf="option?.state !== 'hidden'">
+    <div [ngSwitch]="_appearance">
+        <ng-template *ngSwitchCase="'bar'">
+            <progress-bar [option]="_barOption"></progress-bar>
+        </ng-template>
+        <ng-template [ngSwitchDefault]>
+            <progress-circle [option]="_circleOption"></progress-circle>
+        </ng-template>
+    </div>
+</ng-container>

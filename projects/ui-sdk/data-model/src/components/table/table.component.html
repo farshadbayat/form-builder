@@ -1,0 +1,49 @@
+<div class="table-header" dragDrop [scale]="scale" (event)="tableDrag_onEvent($event)">
+  <img class="table-icon" src="../../../../assets/images/table.svg">
+  <span class="table-text">
+    {{ table.name }}
+  </span>
+  <span class="field-action table-action">
+    <button (click)="table_onDelete($event)"><img src="../../../../assets/images/delete.svg"></button>
+    <button (click)="table_onEdit($event)"><img src="../../../../assets/images/edit.svg"></button>
+  </span>
+</div>
+<ul class="field-list" cdkDropList (cdkDropListDropped)="field_onDrop($event)">
+    <li *ngFor="let field of table.fields"
+        class="field-item"
+        [attr.field-name]="field.name"
+        (click)="selectField_onClick(field)"
+        (mouseenter)="field_onHover(field)"
+        (mouseleave)="field_onLeave(field)"
+        [class.drag-field]="relation?.field === field"
+        [class.drop-field]="relation?.foreignField === field"
+        [class.field-selected-for-relation]="field.designer?.relationSelected == true"
+        [class.field-selected]="field === currentField"
+        cdkDrag
+        [cdkDragDisabled]="field !== currentField"
+        >
+
+        <span class="key-field"
+              [class.relation-drag]="relation?.field === field"
+              [class.relation-drop]="relation?.designer?.status == 'from'"
+              dragDrop [scale]="scale" (event)="relationDrag_onEvent($event, field)"
+              >
+            <img draggable="false" src="../../../../assets/images/is-key.svg"  *ngIf="field.isKey === true">
+            <img draggable="false" src="../../../../assets/images/is-foreign-key.svg"  *ngIf="foreignFields.has(field.name) === true">
+        </span>
+        <div class="field-details">
+            <span class="name">
+                {{field.name}}
+            </span>
+            <span class="type">
+                {{field.type}}
+            </span>
+        </div>
+
+        <span class="field-action" *ngIf="field === currentField">
+            <button (click)="field_onDelete($event)"><img src="../../../../assets/images/delete.svg"></button>
+            <button (click)="field_onEdit($event)"><img src="../../../../assets/images/edit.svg"></button>
+            <img cdkDragHandle class="drag-indicator" [class.dragging]="" src="../../../../assets/images/drag.svg">
+        </span>
+    </li>
+</ul>
