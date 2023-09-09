@@ -2,8 +2,8 @@ import { Inject, InjectionToken, ModuleWithProviders, NgModule, Optional } from 
 import { CommonModule } from '@angular/common';
 import { PinchZoomDirective } from './directives/pinch-zoom.directive';
 import { GlobalService } from './services/global.service';
-
-export const GLOBAL_TOKEN = new InjectionToken<GlobalService>('GLOBAL_TOKEN');
+import { UIControlConfig } from './models/ui-control-config.model';
+import { UIService, UI_CONFIG } from './services/ui.service';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,6 @@ export const GLOBAL_TOKEN = new InjectionToken<GlobalService>('GLOBAL_TOKEN');
   ],
   imports: [
     CommonModule,
-    // RootViewContainerDirective
   ],
   providers:[
 
@@ -22,14 +21,29 @@ export const GLOBAL_TOKEN = new InjectionToken<GlobalService>('GLOBAL_TOKEN');
   ]
 })
 export class UIBuilderModule {
-  static forRoot(): ModuleWithProviders<UIBuilderModule> {
+  static forRoot(config?: UIControlConfig): ModuleWithProviders<UIBuilderModule> {
     return {
       ngModule: UIBuilderModule,
-      providers: [],
+      providers: [
+        { provide: UI_CONFIG, useValue: config, multi: true },
+        UIService
+      ],
     };
   }
-  // constructor(@Optional() @Inject(GLOBAL_TOKEN) globalService: GlobalService) {
-  //   console.log(globalService);
 
-  // }
+  static forChild(config?: UIControlConfig): ModuleWithProviders<UIBuilderModule> {
+    return {
+      ngModule: UIBuilderModule,
+      providers: [
+        { provide: UI_CONFIG, useValue: config, multi: true },
+      ],
+    };
+  }
+
+  constructor(uiService: UIService, @Optional() @Inject(UI_CONFIG) configs: UIControlConfig[] = []) {
+    if (!configs) {
+      return;
+    }
+    configs.forEach((config) => uiService.register(config));
+  }
 }
