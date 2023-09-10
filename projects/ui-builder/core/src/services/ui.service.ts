@@ -10,9 +10,9 @@ export const UI_CONFIG = new InjectionToken<UIControlConfig[]>('UI_CONFIG');
 export class UIService {
     uiControls: { [name: string]: UIControl } = {};
 
-    register(config: UIControlConfig) {
+    register(config?: UIControlConfig) {
       console.log(config);
-      config.uiControls.forEach( control =>{
+      config?.uiControls?.forEach( control =>{
         this.uiControls[control.name] = control;
       });
 

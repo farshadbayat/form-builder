@@ -1,7 +1,6 @@
 import { Inject, InjectionToken, ModuleWithProviders, NgModule, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PinchZoomDirective } from './directives/pinch-zoom.directive';
-import { GlobalService } from './services/global.service';
 import { UIControlConfig } from './models/ui-control-config.model';
 import { UIService, UI_CONFIG } from './services/ui.service';
 
