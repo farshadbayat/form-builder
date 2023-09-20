@@ -1,8 +1,8 @@
 import { Inject, InjectionToken, ModuleWithProviders, NgModule, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PinchZoomDirective } from './directives/pinch-zoom.directive';
-import { UIControlConfig } from './models/ui-control-config.model';
 import { UIService, UI_CONFIG } from './services/ui.service';
+import { UIPackage } from './models/ui-package.model';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { UIService, UI_CONFIG } from './services/ui.service';
   ]
 })
 export class UIBuilderModule {
-  static forRoot(config?: UIControlConfig): ModuleWithProviders<UIBuilderModule> {
+  static forRoot(config?: UIPackage): ModuleWithProviders<UIBuilderModule> {
     return {
       ngModule: UIBuilderModule,
       providers: [
@@ -30,7 +30,7 @@ export class UIBuilderModule {
     };
   }
 
-  static forChild(config?: UIControlConfig): ModuleWithProviders<UIBuilderModule> {
+  static forChild(config?: UIPackage): ModuleWithProviders<UIBuilderModule> {
     return {
       ngModule: UIBuilderModule,
       providers: [
@@ -39,10 +39,10 @@ export class UIBuilderModule {
     };
   }
 
-  constructor(uiService: UIService, @Optional() @Inject(UI_CONFIG) configs: UIControlConfig[] = []) {
+  constructor(uiService: UIService, @Optional() @Inject(UI_CONFIG) configs: UIPackage[] = []) {
     if (!configs) {
       return;
     }
-    configs.forEach((config) => uiService.register(config));
+    configs.forEach((config) => uiService.registerPackage(config));
   }
 }
