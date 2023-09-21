@@ -9,6 +9,7 @@ import { ZoomPipe } from './pipes/zoom.pipe';
 import { DragDropDirective } from './directives/drag-drop.directive';
 import { RelationService } from './services/relation.service';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { PinchZoomDirective } from './directives/pinch-zoom.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     StatusBarComponent,
     ZoomPipe,
     DragDropDirective,
-    ConfirmComponent
+    ConfirmComponent,
+    PinchZoomDirective
   ],
   providers:[
     RelationService

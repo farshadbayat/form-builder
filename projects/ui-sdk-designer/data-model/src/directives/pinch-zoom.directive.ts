@@ -1,5 +1,6 @@
 import { Directive, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
-import { clamp } from '../utilities/number.util';
+import { clamp } from 'ui-builder/core';
+
 /**
  *  https://levelup.gitconnected.com/how-to-implement-pinch-to-zoom-on-the-browser-in-angular-6ad56ce54df4 
  */

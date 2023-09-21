@@ -9,4 +9,4 @@ export * from './src/models/updatable.interface';
 export * from './src/utilities/guid.util';
 export * from './src/utilities/builder.util'
 export * from './src/utilities/number.util'
-export * from './src/directives/pinch-zoom.directive'
+

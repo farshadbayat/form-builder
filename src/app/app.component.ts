@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
 import { DataSource, Menu } from 'ui-builder/core';
-import { InputFieldOption } from 'ui-sdk/input-field';
-import { MenuOption } from 'ui-sdk/menu';
+import { InputFieldOption } from 'projects/ui-sdk-designer/input-field';
+import { MenuOption } from 'projects/ui-sdk-designer/menu';
 import { counterList } from './country.data';
-import { CircleOptions } from 'ui-sdk/progress-indicator';
-import { DataField, DataModelOptions, DataTable } from 'ui-sdk/data-model';
-import { ToasterService } from 'ui-sdk/toast-notification';
+import { CircleOptions } from 'projects/ui-sdk-designer/progress-indicator';
+import { DataField, DataModelOptions, DataTable } from 'projects/ui-sdk-designer/data-model';
+import { ToasterService } from 'projects/ui-sdk-designer/toast-notification';
 
 @Component({
   selector: 'app-root',

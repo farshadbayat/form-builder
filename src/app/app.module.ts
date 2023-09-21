@@ -4,13 +4,13 @@ import { CdkMenuModule } from '@angular/cdk/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { InputFieldModule } from 'ui-sdk/input-field';
-import { ButtonModule } from 'ui-sdk/button';
-import { MenuModule } from 'ui-sdk/menu';
-import { RippleModule } from 'ui-sdk/ripple';
-import { ProgressIndicatorModule } from 'ui-sdk/progress-indicator';
-import { DataModelModule } from 'ui-sdk/data-model';
-import { ToastNotificationsModule } from 'ui-sdk/toast-notification';
+import { InputFieldModule } from 'projects/ui-sdk-designer/input-field';
+import { ButtonModule } from 'projects/ui-sdk-designer/button';
+import { MenuModule } from 'projects/ui-sdk-designer/menu';
+import { RippleModule } from 'projects/ui-sdk-designer/ripple';
+import { ProgressIndicatorModule } from 'projects/ui-sdk-designer/progress-indicator';
+import { DataModelModule } from 'projects/ui-sdk-designer/data-model';
+import { ToastNotificationsModule } from 'projects/ui-sdk-designer/toast-notification';
 import { GlobalErrorHandler } from './global-error-handler';
 import { UIBuilderModule } from 'ui-builder';
 

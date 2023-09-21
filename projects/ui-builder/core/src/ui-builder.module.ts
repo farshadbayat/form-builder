@@ -1,13 +1,10 @@
 import { Inject, InjectionToken, ModuleWithProviders, NgModule, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PinchZoomDirective } from './directives/pinch-zoom.directive';
 import { UIService, UI_CONFIG } from './services/ui.service';
 import { UIPackage } from './models/ui-package.model';
 
 @NgModule({
-  declarations: [
-    PinchZoomDirective
-  ],
+  declarations: [],
   imports: [
     CommonModule,
   ],
@@ -15,8 +12,7 @@ import { UIPackage } from './models/ui-package.model';
 
   ],
   exports:[
-    CommonModule,
-    PinchZoomDirective
+    CommonModule
   ]
 })
 export class UIBuilderModule {
