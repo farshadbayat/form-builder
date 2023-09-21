@@ -1,10 +1,13 @@
-import { Inject, InjectionToken, ModuleWithProviders, NgModule, Optional } from '@angular/core';
+import { Inject, ModuleWithProviders, NgModule, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UIService, UI_CONFIG } from './services/ui.service';
 import { UIPackage } from './models/ui-package.model';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    PageComponent
+  ],
   imports: [
     CommonModule,
   ],

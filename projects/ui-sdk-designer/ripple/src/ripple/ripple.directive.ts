@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Directive, HostListener, Inject, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[ripple]'
+  selector: '[ripple]' 
 })
 export class RippleDirective implements OnInit, AfterViewInit  {
   @Input() ripple: boolean = true;
