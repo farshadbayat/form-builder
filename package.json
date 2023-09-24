@@ -2,24 +2,21 @@
   "name": "ui-builder-work-space",
   "version": "0.0.0",
   "scripts": {
-    "start": "npm-run-all clean --parallel lib-ui-builder:watch lib-ui-sdk:watch build:sass demo:start-waiton ",
-    "build": "run-s lib-ui-sdk:build demo:build",
-    "test": "run-p lib-ui-sdk:test demo:test",
-    "build:sass": "wait-on dist/ui-sdk-designer/package.json && sass ./projects/ui-sdk-designer/styles/core.scss dist/ui-sdk-designer/assets/styles/core.css",
-    "lib-ui-sdk:build": "ng build ui-sdk-designer",
-    "lib-ui-sdk:watch": "wait-on dist/ui-builder/package.json && ng build ui-sdk-designer --watch --configuration development",
-    "lib-ui-sdk:test": "ng test ui-sdk-designer",
+    "start": "npm-run-all clean --parallel ui-builder:watch ui-sdk-designer ",
 
-    "lib-ui-builder:build": "ng build ui-builder",
-    "lib-ui-builder:watch": "ng build ui-builder --watch --configuration development",
-    "lib-ui-builder:test": "ng test ui-builder",
+    "ui-builder:watch": "ng build ui-builder --watch --configuration development",
 
-    "demo:start-waiton": "wait-on dist/ui-sdk-designer/package.json && npm run demo:start",
-    "demo:start": "ng serve ui-builder-work-space -o --port 4205",
-    "demo:build": "ng build ui-builder-work-space",
-    "demo:watch": "ng build ui-builder-work-space --watch --configuration development",
-    "demo:test": "ng test ui-builder-work-space",
-    "clean": "rimraf dist"
+    "ui-sdk-designer": "run-p ui-sdk-designer:watch postprocess:sass",
+    "ui-sdk-designer:watch": "wait-on dist/ui-builder/package.json && ng build ui-sdk-designer --watch --configuration development",
+    "postprocess:sass": "wait-on dist/ui-sdk-designer/package.json && sass ./projects/ui-sdk-designer/styles/core.scss dist/ui-sdk-designer/assets/styles/core.css",
+
+    "showcase": " ng serve show-case -o --port 4205 --configuration development",
+
+    "clean": "rimraf dist",
+
+    "test:ui-builder": "ng test ui-builder",
+    "test:ui-sdk-designer": "ng test ui-sdk-designer",
+    "test:showcase": "ng test show-case"
   },
   "private": true,
   "dependencies": {
