@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { InputFieldModule } from 'projects/ui-sdk-designer/input-field';
 import { ButtonModule } from 'projects/ui-sdk-designer/button';
 import { MenuModule } from 'projects/ui-sdk-designer/menu';
-import { RippleModule } from 'projects/ui-sdk-designer/ripple';
+import { RippleModule } from 'ui-sdk/ripple';
 import { ProgressIndicatorModule } from 'projects/ui-sdk-designer/progress-indicator';
 import { DataModelModule } from 'projects/ui-sdk-designer/data-model';
 import { ToastNotificationsModule } from 'projects/ui-sdk-designer/toast-notification';
