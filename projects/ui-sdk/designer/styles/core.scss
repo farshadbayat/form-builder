@@ -1,0 +1,57 @@
+@import '@angular/cdk/overlay-prebuilt.css';
+@import './global.scss';
+
+:root {
+
+    --ui-sdk-menu-panel: #fff;
+    --ui-sdk-menu-panel-color: #000;
+    --ui-sdk-menu-panel-radius: 4px;
+
+
+    --ui-sdk-background-0: #fff;    
+    --ui-sdk-background-1: #f8f8f8;
+    --ui-sdk-background-2: #fafafa;
+    --ui-sdk-background-3: #E2E5E6;
+    --ui-sdk-background-4: #F8FAFB;
+    --ui-sdk-background-5: #485350;
+    --ui-sdk-background-6: #ABB1B0;
+    --ui-sdk-background-7: #757575;
+    --ui-sdk-background-8: #f0f0f0;
+
+    --ui-sdk-label-color-0: #757575;
+
+    --border-color: #ddd;
+    --ui-sdk-primary-border-color: #d9d9d9;
+    --ui-sdk-primary-color: #1890ff;
+    --ui-sdk-primary-background-color-hover: #40a9ff;
+    --ui-sdk-primary-color-hover: #fff;
+    --ui-sdk-primary-color-active: #096dd9;
+    --ui-sdk-primary-color-outline: rgba(24, 144, 255, .2);    
+    --ui-sdk-primary-0: #fff;
+    --ui-sdk-primary-1: #e6f7ff;
+    --ui-sdk-primary-2: #bae7ff;
+    --ui-sdk-primary-3: #91d5ff;
+    --ui-sdk-primary-4: #69c0ff;
+    --ui-sdk-primary-5: #40a9ff;
+    --ui-sdk-primary-6: #1890ff;
+    --ui-sdk-primary-7: #096dd9;
+    --ui-sdk-success-color: #52c41a;
+    --ui-sdk-success-color-hover: #73d13d;
+    --ui-sdk-success-color-active: #389e0d;
+    --ui-sdk-success-color-outline: rgba(82, 196, 26, .2);    
+    --ui-sdk-error-color: #ff4d4f;
+    --ui-sdk-error-color-hover: #ff7875;
+    --ui-sdk-error-color-active: #d9363e;
+    --ui-sdk-error-color-outline: rgba(255, 77, 79, .2);    
+    --ui-sdk-warning-color: #faad14;
+    --ui-sdk-warning-color-hover: #ffc53d;
+    --ui-sdk-warning-color-active: #d48806;
+    --ui-sdk-warning-color-outline: rgba(250, 173, 20, .2);    
+    --ui-sdk-info-color: #1890ff;
+
+    --ui-sdk-label-font-size: 14px;
+}
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+}

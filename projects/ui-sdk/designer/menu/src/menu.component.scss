@@ -1,0 +1,37 @@
+@use 'sass:math';
+@use '../../styles/core.scss';
+
+$menu-panel-max-height: 275px !default;
+
+.menu-panel-down:not(.menu-panel-above) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    transform-origin: top center;
+}
+
+.menu-panel-above {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transform-origin: bottom center;
+}
+
+.menu-panel {
+    width: 100%; // Ensures that the panel matches the overlay width.
+    max-height: $menu-panel-max-height;
+    position: static; // MDC uses `absolute` by default which will throw off our positioning.
+    outline: 0;
+
+    box-shadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
+    background-color: var(--ui-sdk-menu-panel, #fff);
+    color: var(--ui-sdk-menu-panel-color, #000);
+    border-radius: var(--ui-sdk-menu-panel-radius, 4px);
+}
+
+.menu-trigger {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+  }
