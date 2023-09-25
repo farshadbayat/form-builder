@@ -14,7 +14,7 @@ import { RelationService } from '../services/relation.service';
 import { DiagramHelper } from '../helper/diagram.helper';
 import { FieldDesigner } from '../models/designer.model';
 import { ToolbarEvent } from '../components/status-bar/status-bar.component';
-
+  
 @Component({
   selector: 'diagram',
   templateUrl: './diagram.component.html',
