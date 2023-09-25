@@ -30,7 +30,7 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "dist/ui-sdk/assets",
+                "input": "dist/ui-sdk-designer/assets",
                 "output": "assets"
               }
             ],
@@ -195,7 +195,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/show-case/src/favicon.ico",
-              "projects/show-case/src/assets"
+              "projects/show-case/src/assets",
+              {
+                "glob": "**/*",
+                "input": "dist/ui-designer/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "projects/show-case/src/styles.scss"
