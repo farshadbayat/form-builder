@@ -1,0 +1,36 @@
+<ng-template #toastPanel let-toasts>
+  <ng-container *ngFor="let toast of toasts">
+    <div *ngIf="!toast.isOverflow" [style.dir]="toast.direction" [@nested]>
+      <div class="toast-card" [ngClass]="toast.type || 'light'" [@shrink] (mouseenter)="mouse_onEvent($event, toast)"
+        (mouseleave)="mouse_onEvent($event, toast)">
+        <ng-template toastContent [toast]="toast"></ng-template>
+        <ng-container *ngIf="toast.autoClose">        <div *ngIf="toast.progressState == 'pause'" [style.width.%]="toast.progress * 100" [style.opacity]="toast.progress" class="lifetime-progress" role="progressbar"></div>
+          <div *ngIf="toast.progressState == 'progress'" #progress class="lifetime-progress" role="progressbar"
+            [@progress]="{value: toast.progressState, params: {duration: toast.remain, width: toast.progress * 100, opacity: toast.progress}}">.</div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</ng-template>
+<button (click)="test()"> Test BTN</button>
+
+<div class="toast-overlay">
+  <div class="toast-panel top-center">
+    <ng-container *ngTemplateOutlet="toastPanel; context: {$implicit: tc}"></ng-container>
+  </div>
+  <div class="toast-panel top-left">
+    <ng-container *ngTemplateOutlet="toastPanel; context: {$implicit: tl}"></ng-container>
+  </div>
+  <div class="toast-panel top-right">
+    <ng-container *ngTemplateOutlet="toastPanel; context: {$implicit: tr}"></ng-container>
+  </div>
+  <div class="toast-panel bottom-center">
+    <ng-container *ngTemplateOutlet="toastPanel; context: {$implicit: bc}"></ng-container>
+  </div>
+  <div class="toast-panel bottom-left">
+    <ng-container *ngTemplateOutlet="toastPanel; context: {$implicit: bl}"></ng-container>
+  </div>
+  <div class="toast-panel bottom-right">
+    <ng-container *ngTemplateOutlet="toastPanel; context: {$implicit: br}"></ng-container>
+  </div>
+</div>

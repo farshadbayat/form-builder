@@ -1,35 +1,47 @@
-import { Inject, InjectionToken, ModuleWithProviders, NgModule, Optional } from '@angular/core';
+import { Inject, ModuleWithProviders, NgModule, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PinchZoomDirective } from './directives/pinch-zoom.directive';
-import { GlobalService } from './services/global.service';
-
-export const GLOBAL_TOKEN = new InjectionToken<GlobalService>('GLOBAL_TOKEN');
+import { UIService, UI_CONFIG } from './services/ui.service';
+import { UIPackage } from './models/ui-package.model';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   declarations: [
-    PinchZoomDirective
+    PageComponent
   ],
   imports: [
     CommonModule,
-    // RootViewContainerDirective
   ],
   providers:[
 
   ],
   exports:[
-    CommonModule,
-    PinchZoomDirective
+    CommonModule
   ]
 })
 export class UIBuilderModule {
-  static forRoot(): ModuleWithProviders<UIBuilderModule> {
+  static forRoot(config?: UIPackage): ModuleWithProviders<UIBuilderModule> {
     return {
       ngModule: UIBuilderModule,
-      providers: [],
+      providers: [
+        { provide: UI_CONFIG, useValue: config, multi: true },
+        UIService
+      ],
     };
   }
-  // constructor(@Optional() @Inject(GLOBAL_TOKEN) globalService: GlobalService) {
-  //   console.log(globalService);
 
-  // }
+  static forChild(config?: UIPackage): ModuleWithProviders<UIBuilderModule> {
+    return {
+      ngModule: UIBuilderModule,
+      providers: [
+        { provide: UI_CONFIG, useValue: config, multi: true },
+      ],
+    };
+  }
+
+  constructor(uiService: UIService, @Optional() @Inject(UI_CONFIG) configs: UIPackage[] = []) {
+    if (!configs) {
+      return;
+    }
+    configs.forEach((config) => uiService.registerPackage(config));
+  }
 }
