@@ -27,4 +27,14 @@ export class UIService {
     });
   }
 
+  getControl(name: string, packageName: string = this.defaultPackage) {
+    if(!this.packages[packageName]) {      
+      throw new Error(`[UI Builder] The package ui "${packageName}" could not be found. Please make sure that is registered.`);
+    } else if(!this.packages[packageName].controls[name]) {      
+      throw new Error(`[UI Builder] The control "${name}" could not be found. Please make sure that is registered in package "${packageName}".`);
+    } else {
+      return this.packages[packageName].controls[name];
+    }
+  }
+
 }
