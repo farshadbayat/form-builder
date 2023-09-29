@@ -2,7 +2,7 @@ import { Observable } from "rxjs";
 import { PageOptions } from "./page-options.model";
 
 export interface Field<P = FieldProperties & { [additionalProperties: string]: any }> {
-    controlName: string;
+    type: string;
     key?: string | number | (string | number)[];
     /**
    * Array of functions to execute, as a pipeline, whenever the model updates, usually via user input.

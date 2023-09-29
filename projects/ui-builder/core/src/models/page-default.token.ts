@@ -9,5 +9,5 @@ export const DEFAULT_OPTION: PageOptions = {
     name: 'Loading',
     dir: 'ltr',
     disabled: false,
-    fields: []
+    controls: []
   };

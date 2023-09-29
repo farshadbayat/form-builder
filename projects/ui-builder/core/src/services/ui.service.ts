@@ -1,6 +1,6 @@
 import { Injectable, InjectionToken } from "@angular/core";
 import { UIControl } from "../models/ui-control.model";
-import { UIPackage } from "../models/ui-package.model";
+import { RegisterPackage, UIPackage } from "../models/ui-package.model";
 
 
 export const UI_CONFIG = new InjectionToken<UIPackage[]>('UI_CONFIG');
@@ -9,7 +9,7 @@ export const UI_CONFIG = new InjectionToken<UIPackage[]>('UI_CONFIG');
  */
 @Injectable({ providedIn: 'root' })
 export class UIService {  
-  packages: { [name: string]: UIPackage } = {};
+  packages: { [name: string]: RegisterPackage } = {};
 
   defaultPackage: string = 'basic';
   
@@ -17,7 +17,12 @@ export class UIService {
     debugger
     console.log(config);
     if(config) {
-      this.packages[config.name] = config;
+      this.packages[config.name] =new RegisterPackage(config.name);
+      //  {
+      //   name: config.name,
+      //   controls: {}
+      // };
+      this.registerControls(config.name, config.controls);
     }
   }
 

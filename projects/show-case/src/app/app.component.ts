@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
-import { DataSource, Menu } from 'ui-builder';
+import { DataSource, Menu, PageOptions } from 'ui-builder';
 import { DataField, DataModelOptions, DataTable } from 'ui-sdk/data-model';
 import { InputFieldOption } from 'ui-sdk/input-field';
 import { MenuOption } from 'ui-sdk/menu';
@@ -15,6 +15,8 @@ import { CounterList } from './mock/country.data';
 })
 export class AppComponent {
   title = 'show-case';
+
+  pageOption: PageOptions = new PageOptions();
 
   option1: InputFieldOption = new InputFieldOption();
   option2: InputFieldOption = new InputFieldOption();
@@ -42,6 +44,9 @@ export class AppComponent {
 
   ngOnInit(): void
   {
+
+    this.pageOption.controls.push({type: 'button', })
+
     this.option1.label = 'Input Field1';
     this.option1.labelStyle = { 'width': '150px' };
     this.option1.menu = new Menu();
