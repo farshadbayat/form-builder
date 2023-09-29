@@ -3,7 +3,7 @@ import { ngStyle } from "./core-type";
 import { Field } from "./field.model";
 
 export class PageOptions extends BaseControl {    
-    fields: Field[] = [];
+    controls: Field[] = [];
     package?: string;
     style?: ngStyle;
     className?: string[] | string;
