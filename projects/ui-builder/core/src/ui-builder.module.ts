@@ -15,7 +15,8 @@ import { PageComponent } from './page/page.component';
 
   ],
   exports:[
-    CommonModule
+    CommonModule,
+    PageComponent
   ]
 })
 export class UIBuilderModule {
