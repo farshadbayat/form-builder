@@ -17,6 +17,8 @@ export class PageComponent {
     @Inject(PAGE_DEFAULT_OPTION) private  defaultConfig: PageOptions,
     private hostContainerRef: ViewContainerRef,
     private uiService: UIService) {
+      console.log(defaultConfig);
+
   }
 
   render() {
