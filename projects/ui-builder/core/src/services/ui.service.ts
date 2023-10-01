@@ -17,11 +17,7 @@ export class UIService {
     debugger
     console.log(config);
     if(config) {
-      this.packages[config.name] =new RegisterPackage(config.name);
-      //  {
-      //   name: config.name,
-      //   controls: {}
-      // };
+      this.packages[config.name] = new RegisterPackage(config.name);
       this.registerControls(config.name, config.controls);
     }
   }
