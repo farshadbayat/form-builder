@@ -1,5 +1,5 @@
 import { InjectionToken } from "@angular/core";
-import { ButtonOptions } from "./button-option.model";
+import { ButtonOptions } from "./button-options.model";
 
 export const BUTTON_DEFAULT_OPTIONS =
   new InjectionToken<ButtonOptions>('button-default-options', {
