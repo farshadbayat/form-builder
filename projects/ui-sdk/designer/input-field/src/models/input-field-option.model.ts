@@ -1,10 +1,10 @@
-import { BaseControl, DataSource, Menu, ngStyle } from "ui-builder";
+import { FieldOption, DataSource, Menu, NgStyle } from "ui-builder";
 
 export type Appearance = 'inline' | 'front' | 'above' | 'none';
 
-export class FieldOption extends BaseControl {
+export class InputFieldOption extends FieldOption {
     label: string = '';
-    labelStyle?: ngStyle;
+    labelStyle?: NgStyle;
     appearance: Appearance = 'inline';
     menu?: Menu;
 }

@@ -1,7 +1,7 @@
 import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedPosition, ScrollStrategy, ViewportRuler } from '@angular/cdk/overlay';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import { distinctUntilChanged, Subject, take, takeUntil } from 'rxjs';
-import { BaseControlElement, ngClass } from 'ui-builder';
+import { BaseControlElement, NgClass } from 'ui-builder';
 import { MenuOption } from '../public-api';
 import { menuAnimations } from './menu.animation';
 
@@ -43,7 +43,7 @@ export class MenuComponent extends BaseControlElement implements AfterViewInit, 
   /** Width of the overlay panel. */
   _overlayWidth: number | string = '';
 
-  _panelClass?: ngClass;
+  _panelClass?: NgClass;
 
   _positions: ConnectedPosition[] = [
     {

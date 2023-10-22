@@ -2,7 +2,7 @@ import { CdkMenuTrigger } from '@angular/cdk/menu';
 import { AfterViewInit, Component, HostListener, Input, ViewChild, Renderer2, ElementRef, OnInit, Output, EventEmitter } from '@angular/core';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { selectAnimations } from '../animations/menu.animation';
-import { FieldOption } from '../models/field-option.model';
+import { InputFieldOption } from '../models/input-field-option.model';
 
 @Component({
   selector: 'field-wrapper',
@@ -11,9 +11,9 @@ import { FieldOption } from '../models/field-option.model';
   animations: [selectAnimations.transformPanel]
 })
 export class FieldWrapperComponent implements AfterViewInit, OnInit {
-  
-  @Input() option: FieldOption = new FieldOption();
-  
+
+  @Input() option: InputFieldOption = new InputFieldOption();
+
   @ViewChild('menuTrigger',{ static: true }) menuTrigger!: CdkMenuTrigger;
   // set menuTrigger( value : CdkMenuTrigger) {
   //   if(!this.option.menu) {
@@ -21,11 +21,11 @@ export class FieldWrapperComponent implements AfterViewInit, OnInit {
   //   }
   //   this.option.menu.trigger = value;
   // }
-  
 
-  @HostListener('window:resize', ['$event.target']) 
-  onResize() 
-  { 
+
+  @HostListener('window:resize', ['$event.target'])
+  onResize()
+  {
     if(this.option.menu) {
       this.option.menu.width = this.element.nativeElement.clientWidth - 6;
     }
@@ -60,7 +60,7 @@ export class FieldWrapperComponent implements AfterViewInit, OnInit {
   }
 
   constructor(private element: ElementRef) {}
-  
+
   ngOnInit(): void {
     this._panelDoneAnimatingStream
       .pipe(distinctUntilChanged(), takeUntil(this._destroy))
@@ -77,7 +77,7 @@ export class FieldWrapperComponent implements AfterViewInit, OnInit {
     this.openedChange.emit(isOpen);
   }
 
-  
+
 
   ngAfterViewInit(): void {
     this.onResize();

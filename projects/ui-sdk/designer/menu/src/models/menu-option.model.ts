@@ -1,6 +1,6 @@
-import { BaseControl, DataSource } from "ui-builder";
+import { FieldOption, DataSource } from "ui-builder";
 
-export class MenuOption extends BaseControl {
+export class MenuOption extends FieldOption {
     overlayClass?: string;
     overlayWidth?: number | string;
     activeMenu: boolean = false;

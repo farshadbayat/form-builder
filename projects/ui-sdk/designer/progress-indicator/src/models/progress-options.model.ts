@@ -1,11 +1,11 @@
 import { BehaviorSubject } from "rxjs";
-import { BaseControl } from "ui-builder";
+import { FieldOption } from "ui-builder";
 
 export type ProgressAppearance = 'circle' | 'bar';
 export type ProgressSpinnerMode = 'determinate' | 'indeterminate';
 export type ProgressBarMode = 'determinate' | 'indeterminate' | 'buffer' | 'query';
 
-export abstract class ProgressOptions extends BaseControl {
+export abstract class ProgressOptions extends FieldOption {
     abstract appearance: ProgressAppearance;
     state!: 'start' | 'stop' | 'hidden';
     color!: string;

@@ -2,7 +2,7 @@ import { Component, ViewContainerRef } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
 import { DataSource, Menu, PageOptions } from 'ui-builder';
 import { DataField, DataModelOptions, DataTable } from 'ui-sdk/data-model';
-import { InputFieldOption } from 'ui-sdk/input-field';
+import { InputField } from 'ui-sdk/input-field';
 import { MenuOption } from 'ui-sdk/menu';
 import { CircleOptions } from 'ui-sdk/progress-indicator';
 import { ToasterService } from 'ui-sdk/toast-notification';
@@ -18,8 +18,8 @@ export class AppComponent {
 
   pageOption: PageOptions = new PageOptions();
 
-  option1: InputFieldOption = new InputFieldOption();
-  option2: InputFieldOption = new InputFieldOption();
+  option1: InputField = new InputField();
+  option2: InputField = new InputField();
 
   loadingOption: CircleOptions = {
     name: 'Loading',

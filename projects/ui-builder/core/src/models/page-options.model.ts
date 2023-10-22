@@ -1,8 +1,8 @@
-import { BaseControl } from "./base-control.model";
+import { FieldOption } from "./field-option.model";
 import { NgStyle } from "./core-type";
 import { Field } from "./field.model";
 
-export class PageOptions extends BaseControl {    
+export class PageOptions extends FieldOption {
     controls: Field[] = [];
     package?: string;
     style?: NgStyle;

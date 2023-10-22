@@ -1,8 +1,8 @@
-import { BaseControl, ngStyle } from "ui-builder";
+import { FieldOption, NgStyle } from "ui-builder";
 import { Field } from "./field.model";
 
-export class FormOptions extends BaseControl {
-  formStyle?: ngStyle;
+export class FormOptions extends FieldOption {
+  formStyle?: NgStyle;
   className?: string[] | string;
   hide?: boolean;
   defaultValues?: any;

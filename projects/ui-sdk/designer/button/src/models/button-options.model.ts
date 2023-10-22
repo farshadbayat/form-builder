@@ -1,9 +1,9 @@
-import { BaseControl, DataSource } from "ui-builder";
+import { FieldOption, DataSource } from "ui-builder";
 
 export type ButtonAppearance = 'normal' | 'icon' | 'link' | 'none';
 export type ButtonLoading = 'normal' | 'loading' | 'loading-disable';
 
-export class ButtonOptions extends BaseControl {
+export class ButtonOptions extends FieldOption {
     text: string = '';
     titleStyle?: { [name: string]: any; };
     appearance: ButtonAppearance = 'normal';

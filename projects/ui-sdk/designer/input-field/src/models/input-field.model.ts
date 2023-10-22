@@ -1,11 +1,11 @@
 import { ComponentPortal } from "@angular/cdk/portal";
 import { DataSource } from "ui-builder";
 import { BasePreviewComponent } from "./base-preview.component";
-import { FieldOption } from "./field-option.model";
+import { InputFieldOption } from "./input-field-option.model";
 
 export type ValueType = 'text' | 'number' | 'number-resize' | 'toggle' | 'radio' | 'category' | 'color' | 'image' | 'date';
 
-export class InputFieldOption extends FieldOption{
+export class InputField extends InputFieldOption{
     value: string = '';
     categoryDataSource?: DataSource;
     valueType?: ValueType = 'text';

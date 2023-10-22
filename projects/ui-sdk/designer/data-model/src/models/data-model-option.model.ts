@@ -1,4 +1,4 @@
-import { BaseControl, GUID } from "ui-builder";
+import { FieldOption, GUID } from "ui-builder";
 import { IPoint } from "./point.model";
 import { DataTable } from "./data-table.model";
 import { DiagramDesigner } from "./designer.model";
@@ -6,7 +6,7 @@ import { TableRelation } from "./table-relation.model";
 
 export const DefaultMargin = 15;
 
-export class DataModelOptions extends BaseControl
+export class DataModelOptions extends FieldOption
 {
   protected tables: DataTable[] = [];
   tableLocation?: Map<GUID, IPoint>;

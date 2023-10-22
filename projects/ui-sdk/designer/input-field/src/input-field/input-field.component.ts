@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input } from '@angular/core';
 import { BaseControlElement } from 'ui-builder';
-import { InputFieldOption } from '../models/input-field.model';
+import { InputField } from '../models/input-field.model';
 
 @Component({
   selector: 'input-field',
@@ -8,7 +8,7 @@ import { InputFieldOption } from '../models/input-field.model';
   styleUrls: ['./input-field.component.scss']
 })
 export  class InputFieldComponent extends BaseControlElement {
-  @Input() option!: InputFieldOption;
+  @Input() option!: InputField;
   protected inputIsActive: boolean = false;
 
   @HostBinding('attr.dir')
