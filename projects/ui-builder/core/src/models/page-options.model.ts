@@ -4,7 +4,6 @@ import { Field } from "./field.model";
 
 export class PageOptions extends FieldOption {
     controls: Field[] = [];
-    package?: string;
     style?: NgStyle;
     className?: string[] | string;
     hide?: boolean;

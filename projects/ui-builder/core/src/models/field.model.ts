@@ -14,7 +14,7 @@ export interface Field<P = FieldProperties & { [additionalProperties: string]: a
     expressions?: {
         [property: string]: string | ((field: Field) => any) | Observable<any>;
     };
-    childField?: Field | Field[];
+    // childField?: Field | Field[];
     readonly packageName?: string;
     /**
      * The parent field.

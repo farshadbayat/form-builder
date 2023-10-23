@@ -1,12 +1,13 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
-import { DataSource, Menu, UIBlock, PageOptions } from 'ui-builder';
+import { DataSource, Menu, PageOptions, UI } from 'ui-builder';
 import { DataField, DataModelOptions, DataTable } from 'ui-sdk/data-model';
 import { InputField } from 'ui-sdk/input-field';
 import { MenuOption } from 'ui-sdk/menu';
 import { CircleOptions } from 'ui-sdk/progress-indicator';
 import { ToasterService } from 'ui-sdk/toast-notification';
 import { CounterList } from './mock/country.data';
+import { ButtonOptions } from 'ui-sdk/button';
 
 @Component({
   selector: 'app-root',
@@ -61,11 +62,12 @@ export class AppComponent {
     this.menuOption.itemDataSource = new DataSource<MenuItem>(this.countryList$);
   }
 
-  ui: UIBlock ={ };
+  form: UI.Form = new UI.Form();
   loadUIConfig() {
-    // this.ui['person'] = new DataField({
-      
-    // });
+    this.form.fields['person'] = new UI.Field({
+      field: new ButtonOptions(),
+      model: {}
+    });
   }
 
   initDataModel()

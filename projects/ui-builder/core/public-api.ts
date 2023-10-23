@@ -6,7 +6,6 @@ export * from './src/models/model.model';
 export * from './src/models/field-option.model';
 export * from './src/models/core-type';
 export * from './src/models/data-source.model';
-export * from './src/models/field.model';
 export * from './src/models/menu.model';
 export * from './src/models/page-default.token';
 export * from './src/models/page-options.model';
