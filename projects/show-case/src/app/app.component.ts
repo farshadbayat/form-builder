@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
-import { DataSource, Menu, PageOptions } from 'ui-builder';
+import { DataSource, Menu, UIBlock, PageOptions } from 'ui-builder';
 import { DataField, DataModelOptions, DataTable } from 'ui-sdk/data-model';
 import { InputField } from 'ui-sdk/input-field';
 import { MenuOption } from 'ui-sdk/menu';
@@ -59,6 +59,13 @@ export class AppComponent {
     this.initDataModel();
 
     this.menuOption.itemDataSource = new DataSource<MenuItem>(this.countryList$);
+  }
+
+  ui: UIBlock ={ };
+  loadUIConfig() {
+    // this.ui['person'] = new DataField({
+      
+    // });
   }
 
   initDataModel()
