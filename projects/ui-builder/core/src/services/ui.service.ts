@@ -8,11 +8,11 @@ export const UI_CONFIG = new InjectionToken<UIPackage[]>('UI_CONFIG');
  * This Service Collect All UI Block in Global Service.
  */
 @Injectable({ providedIn: 'root' })
-export class UIService {  
+export class UIService {
   packages: { [name: string]: RegisterPackage } = {};
 
   defaultPackage: string = 'basic';
-  
+
   registerPackage(config?: UIPackage):void {
     debugger
     console.log(config);
@@ -28,10 +28,10 @@ export class UIService {
     });
   }
 
-  getControl(name: string, packageName: string = this.defaultPackage) {
-    if(!this.packages[packageName]) {      
+  getControl(name: string, packageName: string = this.defaultPackage): UIControl {
+    if(!this.packages[packageName]) {
       throw new Error(`[UI Builder] The package ui "${packageName}" could not be found. Please make sure that is registered.`);
-    } else if(!this.packages[packageName].controls[name]) {      
+    } else if(!this.packages[packageName].controls[name]) {
       throw new Error(`[UI Builder] The control "${name}" could not be found. Please make sure that is registered in package "${packageName}".`);
     } else {
       return this.packages[packageName].controls[name];

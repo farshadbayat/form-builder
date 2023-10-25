@@ -2,7 +2,7 @@ import { Component, Inject, Input, ViewChild, ViewContainerRef } from '@angular/
 import { PageOptions } from '../models/page-options.model';
 import { PAGE_DEFAULT_OPTION } from '../models/page-default.token';
 import { UIService } from '../services/ui.service';
-import { UI } from '../models/model.model';
+import { UI } from '../models/form.model';
 
 
 @Component({
@@ -27,8 +27,9 @@ export class PageComponent {
   render() {
     Object.keys(this.form.controls).forEach( controlName =>{
       const control = this.form.controls[controlName];
-      if(control instanceof  UI.Control && control.field) {
+      if(control instanceof  UI.Control && control.field && control.field.type) {
         const controlUI = this.uiService.getControl(control.field.type, control.field.package);
+        this.viewContainerRef.createComponent(controlUI.component);
       }
     });
     // this.pageOption.controls.forEach( control =>{
