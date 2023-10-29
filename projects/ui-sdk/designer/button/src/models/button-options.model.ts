@@ -4,7 +4,7 @@ export type ButtonLoading = 'normal' | 'loading' | 'loading-disable';
 
 export class ButtonOptions extends FieldOption
 {
-  text: string = '';
+  text: string = 'Button 01';
   titleStyle?: { [name: string]: any; };
   appearance: ButtonAppearance = 'normal';
   activeMenu: boolean = false;
