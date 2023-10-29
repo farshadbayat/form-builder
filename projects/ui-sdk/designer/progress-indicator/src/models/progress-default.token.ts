@@ -13,6 +13,7 @@ export const PROGRESS_SPINNER_DEFAULT_OPTIONS =
 
 export function PROGRESS_SPINNER_DEFAULT_OPTIONS_FACTORY(): CircleOptions {
   return {
+    ...new CircleOptions(),
     name: 'Loading',
     dir: 'ltr',
     disabled: false,
@@ -35,6 +36,7 @@ export const PROGRESS_BAR_DEFAULT_OPTIONS =
 
 export function PROGRESS_BAR_DEFAULT_OPTIONS_FACTORY(): BarOptions {
   return {
+    ...new BarOptions(),
     name: 'Loading',
     dir: 'ltr',
     disabled: false,

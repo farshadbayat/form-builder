@@ -14,8 +14,6 @@ export class UIService {
   defaultPackage: string = 'basic';
 
   registerPackage(config?: UIPackage):void {
-    debugger
-    console.log(config);
     if(config) {
       this.packages[config.name] = new RegisterPackage(config.name);
       this.registerControls(config.name, config.controls);

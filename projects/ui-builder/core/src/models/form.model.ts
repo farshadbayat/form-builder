@@ -1,41 +1,47 @@
-import { Dictionary } from "./core-type";
+import { ComponentRef } from "@angular/core";
+import { CollectType, ScalerType } from "./core-type";
 import { FieldOption } from "./field-option.model";
+import { LayoutDirective } from "../directives/layout.directive";
 
-export namespace UI
-{
-  export class Form
+  export class FormControl
   {
-    controls: Dictionary<Control | ArrayControl> = new Dictionary();
-
-  }
-
-  export class Control
-  {
-    constructor(data: Partial<Control> = {})
-    {
-      for (const key of Object.keys(data))
-      {
-        (this as any)[key] = (data as any)[key]
-      }
-    }
-    field?: FieldOption;
-    model: Model = new Model();
-  }
-
-  export class ArrayControl extends Form
-  {
-    constructor(data: Partial<ArrayControl> = {}) {
-        super();
+    controls: (FieldControl | FormControl)[] = [];
+    layout?: string;
+    view?: string;
+    layoutRef?: ComponentRef<LayoutDirective>;
+    constructor(data: Partial<FormControl> = {}) {
         for (const key of Object.keys(data)) {
             (this as any)[key] = (data as any)[key]
         }
     }
+
+    createFieldControl(field: Partial<FieldControl>): FormControl {
+      const fieldControl = Object.assign(new FieldControl(), field);
+      this.controls.push(fieldControl);
+      return this;
+    }
+
+    createFormControl(form: Partial<FormControl>): FormControl {
+      const formControl = Object.assign(new FormControl(), form);
+      this.controls.push(formControl);
+      return this;
+    }
   }
 
-  export class Model
+  export class OptionModel<T>  {
+    name!: keyof T;
+    value?: ScalerType | CollectType<ScalerType>;
+ }
+
+ export class FieldControl<T extends FieldOption = FieldOption> {
+  public view?: string;
+  public options!: T;
+  public model?: OptionModel<T>[] = [];
+  constructor(data: Partial<FieldControl<T>> = {})
   {
-    value?: Dictionary<any> = {};
-    event?: 'OnModelChanged' | 'Child';
+    for (const key of Object.keys(data))
+    {
+      (this as any)[key] = (data as any)[key]
+    }
   }
-
 }

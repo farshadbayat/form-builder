@@ -2,9 +2,12 @@
   "name": "ui-builder-work-space",
   "version": "0.0.0",
   "scripts": {
-    "start": "npm-run-all clean --parallel ui-builder:watch ui-sdk-designer ",
+    "start": "npm-run-all clean --parallel ui-builder:watch ui-sdk-common ui-sdk-designer ",
 
     "ui-builder:watch": "ng build ui-builder --watch --configuration development",
+
+    "ui-sdk-common": "run-p ui-sdk-common:watch",
+    "ui-sdk-common:watch": "wait-on dist/ui-builder/package.json && ng build ui-sdk-common --watch --configuration development",
 
     "ui-sdk-designer": "run-p ui-sdk-designer:watch postprocess:sass",
     "ui-sdk-designer:watch": "wait-on dist/ui-builder/package.json && ng build ui-sdk-designer --watch --configuration development",

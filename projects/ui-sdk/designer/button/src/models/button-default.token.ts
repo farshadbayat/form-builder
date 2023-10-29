@@ -1,13 +1,11 @@
 import { InjectionToken } from "@angular/core";
 import { ButtonOptions } from "./button-options.model";
 
-export const BUTTON_DEFAULT_OPTIONS =
-  new InjectionToken<ButtonOptions>('button-default-options', {
-    providedIn: 'root',
-    factory: BUTTON_DEFAULT_OPTIONS_FACTORY,
-  });
+export const BUTTON_DEFAULT_OPTIONS = new InjectionToken<ButtonOptions>('BUTTON_DEFAULT_OPTIONS');
 
-  export function BUTTON_DEFAULT_OPTIONS_FACTORY(): ButtonOptions {
-    return new ButtonOptions();
-  }
+export const DEFAULT_OPTIONS: ButtonOptions = {
+  ...new ButtonOptions(),
+  name: 'button01',
+  dir: 'ltr'
+};
   

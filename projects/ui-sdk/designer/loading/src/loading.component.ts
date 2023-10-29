@@ -2,7 +2,7 @@ import { Component, Inject, Input } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { BaseControlElement } from 'ui-builder';
 import { RotateSpinner } from './animations/bootstrap.animation';
-import { LOADING_DEFAULT_OPTION } from './models/loading-default.token';
+import { LOADING_DEFAULT_OPTIONS } from './models/loading-default.token';
 import { LoadingOptions } from './models/loading-options.model';
 
 @Component({
@@ -16,9 +16,8 @@ export class LoadingComponent extends BaseControlElement {
   readonly _size = new Subject<number>();
   readonly _animationState = new BehaviorSubject<'step1' | 'step2'>('step1');
 
-  constructor(@Inject(LOADING_DEFAULT_OPTION) private  defaultConfig: LoadingOptions) {
+  constructor(@Inject(LOADING_DEFAULT_OPTIONS) private  defaultConfig: LoadingOptions) {
     super();
-    this.option.state
   }
 
   start() {

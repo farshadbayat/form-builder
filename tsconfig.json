@@ -22,9 +22,11 @@
     "paths": {
       "ui-sdk/*": [
         "projects/ui-sdk/designer/*",
+        "projects/ui-sdk/common/*",
       ],
       "ui-sdk": [
         "projects/ui-sdk/designer",
+        "projects/ui-sdk/common",
       ],
       "ui-builder":[
         "dist/ui-builder"

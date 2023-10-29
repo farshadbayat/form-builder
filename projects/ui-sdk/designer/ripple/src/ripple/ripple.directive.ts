@@ -1,11 +1,12 @@
 import { animate, AnimationBuilder, AnimationMetadata, AnimationPlayer, style } from '@angular/animations';
 import { DOCUMENT } from '@angular/common';
-import { AfterViewInit, Directive, HostListener, Inject, Input, OnInit, Renderer2 } from '@angular/core';
+import { Directive, HostListener, Inject, Input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[ripple]'
+  selector: '[ripple]',
+  standalone: true,
 })
-export class RippleDirective implements OnInit, AfterViewInit  {
+export class RippleDirective {
   @Input() ripple: boolean = true;
   @Input() rippleColor: string = 'rgba(88, 88, 88, 0.7)';
   @HostListener('mousedown', ['$event']) onMousedown(e: MouseEvent){
@@ -32,8 +33,6 @@ export class RippleDirective implements OnInit, AfterViewInit  {
     @Inject(DOCUMENT) private document: Document) {
   }
 
-  ngAfterViewInit(): void {
-  }
 
   createRipple(e: MouseEvent): Element {
     
@@ -60,9 +59,6 @@ export class RippleDirective implements OnInit, AfterViewInit  {
 
     this.renderer.appendChild(button, circle);
     return circle;
-  }
-
-  ngOnInit(): void {
   }
 
   private rippleIn(): AnimationMetadata[] {

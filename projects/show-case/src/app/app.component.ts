@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
-import { DataSource, Menu, PageOptions, UI } from 'ui-builder';
+import { DataSource, FormControl, Menu, PageOptions } from 'ui-builder';
 import { DataField, DataModelOptions, DataTable } from 'ui-sdk/data-model';
 import { InputField } from 'ui-sdk/input-field';
 import { MenuOption } from 'ui-sdk/menu';
@@ -23,6 +23,7 @@ export class AppComponent {
   option2: InputField = new InputField();
 
   loadingOption: CircleOptions = {
+    ...new CircleOptions(),
     name: 'Loading',
     dir: 'ltr',
     disabled: false,
@@ -41,6 +42,7 @@ export class AppComponent {
   countryList$ = of(CounterList);
 
   constructor(public toasterService: ToasterService, public viewContainerRef: ViewContainerRef) {
+    this.loadUIConfig();
   }
 
   ngOnInit(): void
@@ -62,12 +64,13 @@ export class AppComponent {
     this.menuOption.itemDataSource = new DataSource<MenuItem>(this.countryList$);
   }
 
-  form: UI.Form = new UI.Form();
+  form: FormControl = new FormControl();
   loadUIConfig() {
-    this.form.fields['person'] = new UI.Field({
-      field: new ButtonOptions(),
-      model: {}
+    console.log(new ButtonOptions());
+    this.form.createFieldControl({
+      options: new ButtonOptions(),
     });
+    console.log(this.form);
   }
 
   initDataModel()

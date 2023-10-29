@@ -17,10 +17,14 @@ export class CircleOptions extends ProgressOptions {
   mode: ProgressSpinnerMode = 'determinate';
   diameter!: number;
   strokeWidth?: number;
+  override typeName: string = 'ProgressCircleControl';
+  override packageName?: string = 'SDK_Designer';
 }
 
 export class BarOptions extends ProgressOptions {
   appearance: 'bar' = 'bar';
   mode: ProgressBarMode = 'determinate';
   bufferValue!: number;
+  override typeName: string = 'ProgressBarControl';
+  override packageName?: string = 'SDK_Designer';
 }

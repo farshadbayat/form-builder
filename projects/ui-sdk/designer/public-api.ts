@@ -1,2 +1,2 @@
 
-export const UI_SDK = "ui-sdk";
+export const UI_SDK = "SDK_Designer";

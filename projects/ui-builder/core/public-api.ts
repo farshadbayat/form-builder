@@ -1,6 +1,6 @@
 export * from './src/ui-builder.module';
 export * from './src/services/global.service'
-export * from './src/directives/base-control';
+export * from './src/directives/base-control.directive';
 
 export * from './src/models/form.model';
 export * from './src/models/field-option.model';

@@ -14,7 +14,7 @@ import { RelationService } from '../services/relation.service';
 import { DiagramHelper } from '../helper/diagram.helper';
 import { FieldDesigner } from '../models/designer.model';
 import { ToolbarEvent } from '../components/status-bar/status-bar.component';
-  
+
 @Component({
   selector: 'diagram',
   templateUrl: './diagram.component.html',
@@ -53,7 +53,7 @@ export class DiagramComponent implements OnInit, OnDestroy, OnChanges, AfterView
         //console.log(this.relation.foreignField.designer);
         this.relation.updateDesigner('both');
       }
-      if (this.relation?.designer.from && this.relation?.designer.to) {        
+      if (this.relation?.designer.from && this.relation?.designer.to) {
         this._diagramHelper.drawRelation(this.relation!);
       }
     });
@@ -172,11 +172,9 @@ export class DiagramComponent implements OnInit, OnDestroy, OnChanges, AfterView
     if (event.type == 'drag') {
       this._relationService.drag(event.table!, event.field!);
       this.relation!.updateDesigner('from');
-    } else if (event.type == 'move') {      
+    } else if (event.type == 'move') {
       if (this.relation?.foreignField && this.relation.foreignField !== event.field) {
         this.relation!.updateDesigner('to');
-        debugger
-        
         //this._diagram.deleteRelation(this.relation);
       } else if (this.relation && event.field && event.table) {
         this._relationService.moveToField(event.table, event.field);

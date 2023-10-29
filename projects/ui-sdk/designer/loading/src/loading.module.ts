@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { UIBuilderModule } from 'ui-builder';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { DEFAULT_OPTION, LOADING_DEFAULT_OPTION } from './models/loading-default.token';
+import { DEFAULT_OPTIONS, LOADING_DEFAULT_OPTIONS } from './models/loading-default.token';
 import { LoadingComponent } from './loading.component';
 
 
@@ -20,7 +20,7 @@ import { LoadingComponent } from './loading.component';
     LoadingComponent
   ],
   providers: [
-    { provide: LOADING_DEFAULT_OPTION, useValue: DEFAULT_OPTION}
+    { provide: LOADING_DEFAULT_OPTIONS, useValue: DEFAULT_OPTIONS}
   ]
 })
 export class LoadingModule { }

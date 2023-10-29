@@ -6,4 +6,6 @@ export class MenuOption extends FieldOption {
     activeMenu: boolean = false;
     menuOpen: boolean = false;
     itemDataSource?: DataSource;
+    override typeName: string = 'MenuControl';
+    override packageName?: string = 'SDK_Designer';
 }

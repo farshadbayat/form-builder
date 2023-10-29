@@ -7,4 +7,6 @@ export class InputFieldOption extends FieldOption {
     labelStyle?: NgStyle;
     appearance: Appearance = 'inline';
     menu?: Menu;
+    override typeName: string = 'InputFieldControl';
+    override packageName?: string = 'SDK_Designer';
 }
