@@ -1,5 +1,5 @@
 
 export * from './core/public-api'
 
-export const UI_BUILDER = "ui-builder";
+export const UI_BUILDER = "BUILDER";
 

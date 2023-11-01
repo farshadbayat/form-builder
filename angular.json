@@ -105,7 +105,6 @@
         }
       }
     },
-
     "ui-sdk-common": {
       "projectType": "library",
       "root": "projects/ui-sdk/common",
@@ -139,7 +138,6 @@
         }
       }
     },
-
     "ui-sdk-designer": {
       "projectType": "library",
       "root": "projects/ui-sdk/designer",
@@ -238,7 +236,17 @@
               }
             ],
             "styles": [
-              "projects/show-case/src/styles.scss"
+              "projects/show-case/src/styles.scss",
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+                "bundleName": "bootstrap-rtl-loader",
+                "inject": false
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "bundleName": "bootstrap-ltr-loader",
+                "inject": true
+              }
             ],
             "scripts": []
           },

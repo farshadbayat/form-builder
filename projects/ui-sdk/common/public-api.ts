@@ -1,2 +1,2 @@
 
-export const UI_COMMON_SDK = "SDK_Common";
+export const UI_COMMON_SDK = "COMMON";
