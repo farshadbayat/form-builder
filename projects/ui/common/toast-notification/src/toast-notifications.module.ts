@@ -18,10 +18,10 @@ import { OverlayModule } from '@angular/cdk/overlay';
     BasicToastContentComponent,
     ToastContentDirective,
   ],
-  entryComponents: [
-    ToastContainerComponent,
-    BasicToastContentComponent,
-  ],
+  // entryComponents: [
+  //   ToastContainerComponent,
+  //   BasicToastContentComponent,
+  // ],
   providers: [
     // GlobalService,
     ToasterService,

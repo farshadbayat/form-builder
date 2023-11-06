@@ -253,7 +253,7 @@
     "ui-common": {
       "projectType": "library",
       "root": "projects/ui/common",
-      "sourceRoot": "projects/ui-builder/src",
+      "sourceRoot": "projects/ui/common",
       "prefix": "lib",
       "architect": {
         "build": {
@@ -312,10 +312,10 @@
               "zone.js",
               "zone.js/testing"
             ]
-          }          
+          }
         }
       }
-    },    
+    },
     "ui-bootstrap": {
       "projectType": "library",
       "root": "projects/ui/bootstrap",

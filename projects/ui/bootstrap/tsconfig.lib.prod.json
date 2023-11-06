@@ -3,9 +3,6 @@
   "extends": "./tsconfig.lib.json",
   "compilerOptions": {
     "declarationMap": false,
-    "paths": {
-      "ui-builder": ["dist/ui-builder"]
-    }
   },
   "angularCompilerOptions": {
     "compilationMode": "partial"

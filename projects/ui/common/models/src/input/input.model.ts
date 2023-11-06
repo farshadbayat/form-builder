@@ -1,3 +1,5 @@
-export abstract class BaseInputOptions{
+import { FieldOption } from "ui-builder";
+
+export abstract class BaseInputOptions extends FieldOption{
 
 }

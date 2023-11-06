@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, Inject, Input, inject } from '@angular/core';
-import { BaseControlElement } from 'ui-builder';
 import { ButtonOptions } from './models/button-options.model';
 import { BUTTON_DEFAULT_OPTIONS } from './models/button-default.token';
+import { BaseControlElement } from 'ui-builder';
 // import { RippleDirective } from 'ui-sdk/ripple';
+
 
 @Component({
   selector: 'button[flat]',
