@@ -21,18 +21,20 @@
     "useDefineForClassFields": false,
     "paths": {
       "ui-sdk/*": [
-        "projects/ui-sdk/designer/*",
-        "projects/ui-sdk/common/*",
+        "projects/ui/designer/*",
+        "projects/ui/common/*",
+        "projects/ui/bootstrap/*",
       ],
       "ui-sdk": [
-        "projects/ui-sdk/designer",
-        "projects/ui-sdk/common",
+        "projects/ui/designer",
+        "projects/ui/common",
+        "projects/ui/bootstrap",
       ],
       "ui-builder":[
-        "dist/ui-builder"
+        "dist/ui-core"
       ],
       "ui-builder/*":[
-        "dist/ui-builder/*"
+        "dist/ui-core/*"
       ],
 
     },
