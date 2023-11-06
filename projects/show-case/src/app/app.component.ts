@@ -1,13 +1,14 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
-import { DataSource, FormControl, Menu, PageOptions } from 'ui-builder';
-import { DataField, DataModelOptions, DataTable } from 'ui-sdk/data-model';
-import { InputField } from 'ui-sdk/input-field';
-import { MenuOption } from 'ui-sdk/menu';
-import { CircleOptions } from 'ui-sdk/progress-indicator';
-import { ToasterService } from 'ui-sdk/toast-notification';
 import { CounterList } from './mock/country.data';
-import { ButtonOptions } from 'ui-sdk/button';
+import { DataSource, FormControl, Menu, PageOptions } from '@ui-core/core';
+import { InputField } from '@ui-designer/input-field';
+import { CircleOptions } from '@ui-designer/progress-indicator';
+import { MenuOption } from '@ui-designer/menu';
+import { DataField, DataModelOptions, DataTable } from '@ui-designer/data-model';
+import { ToasterService } from 'projects/ui/common/toast-notification';
+import { ButtonOptions } from '@ui-bootstrap/button';
+
 
 @Component({
   selector: 'app-root',

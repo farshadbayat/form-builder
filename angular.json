@@ -3,125 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ui-builder-work-space": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/ui-builder-work-space",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "**/*",
-                "input": "dist/ui-sdk-designer/assets",
-                "output": "assets"
-              }
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "browserTarget": "ui-builder-work-space:build:production"
-            },
-            "development": {
-              "browserTarget": "ui-builder-work-space:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "ui-builder-work-space:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
-          }
-        }
-      }
-    },
-    "ui-sdk-common": {
+    "ui-core": {
       "projectType": "library",
-      "root": "projects/ui-sdk/common",
-      "sourceRoot": "projects/ui-builder/src",
+      "root": "projects/ui-core",
+      "sourceRoot": "projects/ui-core",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ui-sdk/common/ng-package.json"
+            "project": "projects/ui-core/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ui-sdk/common/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ui-core/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ui-sdk/common/tsconfig.lib.json"
+              "tsConfig": "projects/ui-core/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -129,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ui-sdk/common/tsconfig.spec.json",
+            "tsConfig": "projects/ui-core/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -138,23 +36,23 @@
         }
       }
     },
-    "ui-sdk-bootstrap": {
+    "ui-common": {
       "projectType": "library",
-      "root": "projects/ui-sdk/bootstrap",
-      "sourceRoot": "projects/ui-sdk/bootstrap/src",
+      "root": "projects/ui/common",
+      "sourceRoot": "projects/ui/common",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ui-sdk/bootstrap/ng-package.json"
+            "project": "projects/ui/common/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ui-sdk/bootstrap/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ui/common/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ui-sdk/bootstrap/tsconfig.lib.json"
+              "tsConfig": "projects/ui/common/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -162,7 +60,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ui-sdk/bootstrap/tsconfig.spec.json",
+            "tsConfig": "projects/ui/common/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -171,23 +69,23 @@
         }
       }
     },
-    "ui-sdk-designer": {
+    "ui-bootstrap": {
       "projectType": "library",
-      "root": "projects/ui-sdk/designer",
-      "sourceRoot": "projects/ui-sdk/designer/src",
+      "root": "projects/ui/bootstrap",
+      "sourceRoot": "projects/ui/bootstrap",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ui-sdk/designer/ng-package.json"
+            "project": "projects/ui/bootstrap/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ui-sdk/designer/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ui/bootstrap/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ui-sdk/designer/tsconfig.lib.json"
+              "tsConfig": "projects/ui/bootstrap/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -195,7 +93,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ui-sdk/designer/tsconfig.spec.json",
+            "tsConfig": "projects/ui/bootstrap/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -204,23 +102,23 @@
         }
       }
     },
-    "ui-builder": {
-      "projectType": "library",
-      "root": "projects/ui-builder",
-      "sourceRoot": "projects/ui-builder/src",
+    "ui-designer": {
+      "projectType": "library",      
+      "root": "projects/ui/designer",
+      "sourceRoot": "projects/ui/designer",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ui-builder/ng-package.json"
+            "project": "projects/ui/designer/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ui-builder/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ui/designer/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ui-builder/tsconfig.lib.json"
+              "tsConfig": "projects/ui/designer/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -228,7 +126,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ui-builder/tsconfig.spec.json",
+            "tsConfig": "projects/ui/designer/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -241,7 +139,14 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "standalone": true
+        },
+        "@schematics/angular:directive": {
+          "standalone": true
+        },
+        "@schematics/angular:pipe": {
+          "standalone": true
         }
       },
       "root": "projects/show-case",

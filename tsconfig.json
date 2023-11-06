@@ -2,9 +2,37 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@ui-core/*":[
+        "dist/@ui-core/*"
+      ],
+      "@ui-common/*": [
+        "dist/ui-common/*",
+      ],
+      "@ui-common": [
+        "projects/ui/common",
+        "dist/ui-common",
+      ],
+      "@ui-designer/*": [
+        "projects/ui/designer/*",
+        "dist/ui-designer/*",
+      ],
+      "@ui-designer": [
+        "projects/ui/designer",
+        "dist/ui-designer",
+      ],
+      "@ui-bootstrap/*": [
+        "projects/ui/bootstrap/*",
+        "dist/ui-bootstrap/*",
+      ],
+      "@ui-bootstrap": [
+        "projects/ui/bootstrap",
+        "dist/ui-bootstrap",
+      ],
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -19,23 +47,6 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "paths": {
-      "ui-sdk/*": [
-        "projects/ui-sdk/designer/*",
-        "projects/ui-sdk/common/*",
-      ],
-      "ui-sdk": [
-        "projects/ui-sdk/designer",
-        "projects/ui-sdk/common",
-      ],
-      "ui-builder":[
-        "dist/ui-builder"
-      ],
-      "ui-builder/*":[
-        "dist/ui-builder/*"
-      ],
-
-    },
     "lib": [
       "ES2022",
       "dom"
