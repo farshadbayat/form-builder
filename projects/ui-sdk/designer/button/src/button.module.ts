@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ButtonComponent } from './button.component';
-import { RippleModule } from 'ui-sdk/ripple';
 import { UIBuilderModule } from 'ui-builder';
 import { BUTTON_DEFAULT_OPTIONS, DEFAULT_OPTIONS } from './models/button-default.token';
+// import { RippleDirective } from 'ui-sdk/ripple';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { BUTTON_DEFAULT_OPTIONS, DEFAULT_OPTIONS } from './models/button-default
     UIBuilderModule,
     CdkMenuModule,
     OverlayModule,
-    RippleModule
+    // RippleDirective
   ],
   exports:[
     ButtonComponent

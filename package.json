@@ -2,18 +2,20 @@
   "name": "ui-builder-work-space",
   "version": "0.0.0",
   "scripts": {
-    "start": "npm-run-all clean --parallel ui-builder:watch ui-sdk-common ui-sdk-designer:watch ui-sdk-bootstrap:watch",
+    "start": "npm-run-all clean --parallel ui-builder:watch ui-sdk-common ui-sdk-designer ui-bootstrap",
     "ui-builder:watch": "ng build ui-builder --watch --configuration development",
+    
     "ui-sdk-common": "run-p ui-sdk-common:watch",
     "ui-sdk-common:watch": "wait-on dist/ui-builder/package.json && ng build ui-sdk-common --watch --configuration development",
     
-    "ui-sdk-bootstrap": "run-p ui-sdk-bootstrap:watch ui-sdk-bootstrap:sass",
-    "ui-sdk-bootstrap:watch": "wait-on dist/ui-builder/package.json && ng build ui-sdk-bootstrap --watch --configuration development",
-    "ui-sdk-bootstrap:sass": "wait-on dist/ui-sdk-bootstrap/package.json && sass ./projects/ui-sdk-bootstrap/styles/core.scss dist/ui-sdk-bootstrap/assets/styles/core.css",
+    "ui-bootstrap": "run-p ui-bootstrap:watch ui-bootstrap:sass",
+    "ui-bootstrap:watch": "wait-on dist/ui-common/package.json && ng build ui-bootstrap --watch --configuration development",
+    "ui-bootstrap:sass": "wait-on dist/ui-bootstrap/package.json && sass ./projects/ui-sdk/bootstrap/styles/core.scss dist/ui-bootstrap/assets/styles/core.css",
     
     "ui-sdk-designer": "run-p ui-sdk-designer:watch ui-sdk-designer:sass",
-    "ui-sdk-designer:watch": "wait-on dist/ui-builder/package.json && ng build ui-sdk-designer --watch --configuration development",
+    "ui-sdk-designer:watch": "wait-on dist/ui-common/package.json && ng build ui-sdk-designer --watch --configuration development",
     "ui-sdk-designer:sass": "wait-on dist/ui-sdk-designer/package.json && sass ./projects/ui-sdk-designer/styles/core.scss dist/ui-sdk-designer/assets/styles/core.css",
+    
     "showcase": " ng serve show-case -o --port 4205 --configuration development",
     "clean": "rimraf dist",
     "test:ui-builder": "ng test ui-builder",
